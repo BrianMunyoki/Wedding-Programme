@@ -60,9 +60,10 @@ a {
 .top-section {
   position: relative;
   padding: 0 18px 26px;
+  overflow: hidden;
   background:
     linear-gradient(rgba(249, 246, 240, 0.18), rgba(249, 246, 240, 0.72)),
-    url("/top-floral.png") center top / 100% auto no-repeat,
+    url("/top-floral.png") center -4px / 106% auto no-repeat,
     #f9f6f0;
 }
 
@@ -472,9 +473,10 @@ a {
 
 .speeches-top {
   padding: 0 18px 30px;
+  overflow: hidden;
   background:
     linear-gradient(rgba(249, 246, 240, 0.48), rgba(249, 246, 240, 0.90)),
-    url("/top-floral.png") center top / 100% auto no-repeat,
+    url("/top-floral.png") center -4px / 106% auto no-repeat,
     #f9f6f0;
 }
 
@@ -564,112 +566,49 @@ a {
   align-items: center;
   min-height: 64px;
   padding: 12px 11px;
-
+  overflow: hidden;
   border: 1px solid transparent;
   border-radius: 12px;
-
-  background: #ffffff;
-
-  box-shadow:
-    0 5px 15px rgba(70, 55, 58, 0.04);
-
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(70, 55, 58, 0.04);
   cursor: pointer;
-  overflow: hidden;
-
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
     border-color 180ms ease,
     background-color 180ms ease;
 }
+
+/* No speech is permanently highlighted.
+   Number 12 and the first speech now look exactly like the rest. */
 .speech-card::before {
   content: "";
   position: absolute;
-
-  left: 0;
   top: 8px;
   bottom: 8px;
-
+  left: 0;
   width: 3px;
-
   border-radius: 0 4px 4px 0;
-
-  background: #b7a06a;
-
+  background: var(--gold);
   transform: scaleY(0);
   transform-origin: center;
-
   transition: transform 180ms ease;
-}
-
-.speech-card:hover {
-  transform: translateY(-3px);
-
-  border-color: rgba(183, 160, 106, 0.55);
-
-  background: #fffdfa;
-
-  box-shadow:
-    0 10px 24px rgba(79, 49, 58, 0.11);
-}
-.speech-card:hover::before {
-  transform: scaleY(1);
-}
-
-.speech-card:hover .speech-number {
-  color: white;
-  background: #6b173a;
-
-  transform: scale(1.08);
-}
-.speech-card:hover .speech-duration {
-  color: white;
-  background: #6b173a;
-}
-
-.speech-card:active {
-  transform: scale(0.985);
-}
-.speech-card:focus-within {
-  transform: translateY(-2px);
-  border-color: rgba(183, 160, 106, 0.55);
-  box-shadow: 0 9px 22px rgba(70, 55, 58, 0.08);
-}
-
-.speech-card:first-child {
-  border-color: rgba(183, 160, 106, 0.72);
-  box-shadow: inset 3px 0 0 var(--gold), 0 7px 18px rgba(70, 55, 58, 0.05);
-}
-
-.speech-card--highlighted {
-  border-color: rgba(107, 23, 58, 0.18);
-  box-shadow: inset 3px 0 0 var(--burgundy), 0 6px 16px rgba(70, 55, 58, 0.05);
 }
 
 .speech-number {
   display: grid;
-
   width: 28px;
   height: 28px;
-
   place-items: center;
-
   border-radius: 50%;
-
-  color: #6b173a;
+  color: var(--burgundy);
   background: #f7f2ee;
-
   font-size: 0.68rem;
   font-weight: 800;
-
   transition:
     transform 180ms ease,
     color 180ms ease,
     background-color 180ms ease;
-}
-.speech-card--highlighted .speech-number {
-  color: #fff;
-  background: var(--burgundy);
 }
 
 .speech-copy {
@@ -691,25 +630,69 @@ a {
   line-height: 1.25;
 }
 
-.speech-card--highlighted .speech-copy p {
-  color: var(--burgundy);
-  font-style: normal;
-}
-
 .speech-duration {
+  align-self: center;
   padding: 6px 8px;
-
   border-radius: 8px;
-
   color: #aa9561;
   background: #fbf8f2;
-
   font-size: 0.58rem;
   white-space: nowrap;
-
   transition:
     color 180ms ease,
-    background-color 180ms ease;
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+/* Desktop / pointer hover effects */
+@media (hover: hover) and (pointer: fine) {
+  .speech-card:hover,
+  .speech-card:focus-within {
+    transform: translateY(-3px);
+    border-color: rgba(183, 160, 106, 0.58);
+    background: #fffdfa;
+    box-shadow: 0 10px 24px rgba(79, 49, 58, 0.11);
+  }
+
+  .speech-card:hover::before,
+  .speech-card:focus-within::before {
+    transform: scaleY(1);
+  }
+
+  .speech-card:hover .speech-number,
+  .speech-card:focus-within .speech-number {
+    color: #fff;
+    background: var(--burgundy);
+    transform: scale(1.08);
+  }
+
+  .speech-card:hover .speech-duration,
+  .speech-card:focus-within .speech-duration {
+    color: #fff;
+    background: var(--burgundy);
+    transform: translateX(-1px);
+  }
+}
+
+/* Mobile / touch feedback */
+.speech-card:active {
+  transform: scale(0.985);
+  border-color: rgba(183, 160, 106, 0.58);
+  background: #fbf6ee;
+}
+
+.speech-card:active::before {
+  transform: scaleY(1);
+}
+
+.speech-card:active .speech-number {
+  color: #fff;
+  background: var(--burgundy);
+}
+
+.speech-card:active .speech-duration {
+  color: #fff;
+  background: var(--burgundy);
 }
 
 @media (min-width: 600px) {
