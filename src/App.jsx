@@ -58,7 +58,7 @@ const speeches = [
   {
     name: "Lynn's colleagues from M-PESA",
     note: "M-PESA colleagues' presentation",
-    highlighted: true,
+    
   },
   { name: "Kelvin's colleagues from Airtel" },
   { name: "Lynn's Aunties from Kamagambo" },
@@ -219,7 +219,7 @@ function Timeline() {
 
 function GiftCard() {
   const [copied, setCopied] = useState(false);
-  const mpesaNumber = "123456";
+  const mpesaNumber = "4384466";
 
   async function copyNumber() {
     try {
@@ -256,7 +256,7 @@ function GiftCard() {
 
         <div className="gift-account">
           <p className="mini-label">ACCOUNT NAME</p>
-          <strong>Lynnette &amp; Kelvin</strong>
+          <strong>Lynnette Akinyi Omollo</strong>
         </div>
       </div>
 
@@ -274,7 +274,7 @@ function Footer() {
       <h2>Two Hearts, One Journey</h2>
       <p>
         Thank you for joining and celebrating this beautiful milestone of love,
-        culture, and union with Lynnette &amp; Kelvin. Your presence and blessings
+        culture and union with Lynnette &amp; Kelvin. Your presence and blessings
         are our greatest gifts.
       </p>
       <span>#LYNNETTEANDKELVIN2026</span>
