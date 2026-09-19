@@ -564,14 +564,72 @@ a {
   align-items: center;
   min-height: 64px;
   padding: 12px 11px;
+
   border: 1px solid transparent;
   border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 5px 15px rgba(70, 55, 58, 0.04);
-  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 15px rgba(70, 55, 58, 0.04);
+
+  cursor: pointer;
+  overflow: hidden;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+.speech-card::before {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+
+  width: 3px;
+
+  border-radius: 0 4px 4px 0;
+
+  background: #b7a06a;
+
+  transform: scaleY(0);
+  transform-origin: center;
+
+  transition: transform 180ms ease;
 }
 
-.speech-card:hover,
+.speech-card:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(183, 160, 106, 0.55);
+
+  background: #fffdfa;
+
+  box-shadow:
+    0 10px 24px rgba(79, 49, 58, 0.11);
+}
+.speech-card:hover::before {
+  transform: scaleY(1);
+}
+
+.speech-card:hover .speech-number {
+  color: white;
+  background: #6b173a;
+
+  transform: scale(1.08);
+}
+.speech-card:hover .speech-duration {
+  color: white;
+  background: #6b173a;
+}
+
+.speech-card:active {
+  transform: scale(0.985);
+}
 .speech-card:focus-within {
   transform: translateY(-2px);
   border-color: rgba(183, 160, 106, 0.55);
@@ -590,16 +648,25 @@ a {
 
 .speech-number {
   display: grid;
+
   width: 28px;
   height: 28px;
+
   place-items: center;
+
   border-radius: 50%;
-  color: var(--burgundy);
+
+  color: #6b173a;
   background: #f7f2ee;
+
   font-size: 0.68rem;
   font-weight: 800;
-}
 
+  transition:
+    transform 180ms ease,
+    color 180ms ease,
+    background-color 180ms ease;
+}
 .speech-card--highlighted .speech-number {
   color: #fff;
   background: var(--burgundy);
@@ -630,13 +697,19 @@ a {
 }
 
 .speech-duration {
-  align-self: center;
   padding: 6px 8px;
+
   border-radius: 8px;
+
   color: #aa9561;
   background: #fbf8f2;
+
   font-size: 0.58rem;
   white-space: nowrap;
+
+  transition:
+    color 180ms ease,
+    background-color 180ms ease;
 }
 
 @media (min-width: 600px) {
