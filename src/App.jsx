@@ -51,8 +51,8 @@ const speeches = [
   { name: "Kelvin's Uncles" },
   { name: "Kelvin's Aunties" },
   { name: "Kelvin's Cousins" },
-  {name: "Team from Makueni county"}
-  {name: "Kelvin's Friends" },
+  {name: "Team from Makueni county"},
+  {name: "Kelvin's Friends"},
   { name: "Lynn's Brothers & Mercy", note: "Together with the kids" },
   { name: "Min Odhis", note: "Mama Lynn's Close Friend" },
   { name: "Lynn's Friends" },
@@ -63,10 +63,11 @@ const speeches = [
     
   },
   { name: "Kelvin's colleagues from Airtel" },
+  { name: "colleagues from Telkom" },
   { name: "Lynn's Aunties from Kamagambo" },
   { name: "Lynn's Uncles from Kamagambo" },
   { name: "Lynn's cousins from Kamagambo" },
-  {name: "Vote of Thanks", name: "Kate"}
+  { name: "Vote of thanks Kate"}
   
   ];
 
