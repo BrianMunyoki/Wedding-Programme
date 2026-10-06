@@ -34,7 +34,7 @@ const timeline = [
   {
     time: "12:30 – 1:00 PM",
     title: "Word of Blessing",
-    text: "Dignified words of counsel, official blessings, and prayer over Lynnette & Kelvin.",
+    text: "Dignified words of counsel, official blessings, and prayer over Lynete & Kelvin.",
   },
   {
     time: "1:00 – 2:30 PM",
@@ -161,7 +161,7 @@ function Hero({ speechesPage = false }) {
             <span />
           </div>
           <h1>
-            LYNNETTE &amp; KELVIN
+            Lynete &amp; KELVIN
             <span>NYOMBO</span>
           </h1>
           <p className="hero-subtitle">CEREMONY PROGRAMME</p>
@@ -289,10 +289,10 @@ function Footer() {
       <h2>Two Hearts, One Journey</h2>
       <p>
         Thank you for joining and celebrating this beautiful milestone of love,
-        culture and union with Lynnette &amp; Kelvin. Your presence and blessings
+        culture and union with Lynete &amp; Kelvin. Your presence and blessings
         are our greatest gifts.
       </p>
-      <span>#LYNNETTEANDKELVIN2026</span>
+      <span>#LyneteANDKELVIN2026</span>
     </footer>
   );
 }
