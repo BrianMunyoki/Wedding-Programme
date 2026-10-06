@@ -1,5 +1,15 @@
 import React, { useEffect, useMemo, useState } from "react";
 import MpesaGift from "./MpesaGift.jsx";
+class Boundary extends React.Component {
+  state = { err: null };
+  static getDerivedStateFromError(err) { return { err }; }
+  render() {
+    if (this.state.err) {
+      return <p style={{ color: "red", padding: 12 }}>Error: {String(this.state.err.message)}</p>;
+    }
+    return this.props.children;
+  }
+}
 const timeline = [
   {
     time: "09:00 – 10:00 AM",
