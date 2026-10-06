@@ -148,7 +148,7 @@ function Hero({ speechesPage = false }) {
 
       {speechesPage ? (
         <>
-          <p className="event-kicker">LYNNETTE & KELVIN NYOMBO</p>
+          <p className="event-kicker">LYNETE & KELVIN NYOMBO</p>
           <Flourish />
           <h1 className="speeches-title">ORDER OF SPEECHES</h1>
           <p className="hero-subtitle">CELEBRATION ADDRESSES</p>
@@ -271,7 +271,7 @@ function GiftCard() {
 
         <div className="gift-account">
           <p className="mini-label">ACCOUNT NAME</p>
-          <strong>Lynnette Akinyi Omollo</strong>
+          <strong>Lynete Akinyi Omollo</strong>
         </div>
       </div>
       <Boundary><MpesaGift /></Boundary>
