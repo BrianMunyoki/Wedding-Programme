@@ -264,7 +264,7 @@ function GiftCard() {
           <strong>Lynnette Akinyi Omollo</strong>
         </div>
       </div>
-
+      <MpesaGift />
       <div className={`copied-feedback ${copied ? "is-visible" : ""}`}>
         ✓ Copied!
       </div>
