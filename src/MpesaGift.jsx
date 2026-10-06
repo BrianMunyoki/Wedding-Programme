@@ -78,7 +78,7 @@ export default function MpesaGift() {
         </button>
       ) : (
         <div>
-          <input style={input} type="tel" placeholder="Your phone (+2547XX XXX XXX)"
+          <input style={input} type="tel" placeholder="Your phone (07XX XXX XXX)"
             value={phone} onChange={(e) => setPhone(e.target.value)} />
           <input style={input} type="number" placeholder="Amount (KES)"
             value={amount} onChange={(e) => setAmount(e.target.value)} />
