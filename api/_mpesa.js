@@ -1,14 +1,16 @@
 export const BASE = "https://sandbox.safaricom.co.ke";
 
 export async function getToken() {
-  const auth = Buffer.from(
-    `${process.env.MPESA_CONSUMER_KEY}:${process.env.MPESA_CONSUMER_SECRET}`
-  ).toString("base64");
+  const key = process.env.MPESA_CONSUMER_KEY;
+  const secret = process.env.MPESA_CONSUMER_SECRET;
+  if (!key || !secret) throw new Error("Missing MPESA_CONSUMER_KEY or MPESA_CONSUMER_SECRET in Vercel");
+  const auth = Buffer.from(`${key.trim()}:${secret.trim()}`).toString("base64");
   const r = await fetch(`${BASE}/oauth/v1/generate?grant_type=client_credentials`, {
     headers: { Authorization: `Basic ${auth}` },
   });
-  const d = await r.json();
-  return d.access_token;
+  const text = await r.text();
+  if (!r.ok || !text) throw new Error(`Token request failed (${r.status}): ${text || "empty response"}`);
+  return JSON.parse(text).access_token;
 }
 
 export function getPassword() {
