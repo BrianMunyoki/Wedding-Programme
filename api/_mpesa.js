@@ -1,5 +1,9 @@
 export const BASE = "https://api.safaricom.co.ke";
+
+let cached = { token: null, exp: 0 };
+
 export async function getToken() {
+  if (cached.token && Date.now() < cached.exp) return cached.token;
   const key = process.env.MPESA_CONSUMER_KEY;
   const secret = process.env.MPESA_CONSUMER_SECRET;
   if (!key || !secret) throw new Error("Missing MPESA_CONSUMER_KEY or MPESA_CONSUMER_SECRET in Vercel");
@@ -9,7 +13,9 @@ export async function getToken() {
   });
   const text = await r.text();
   if (!r.ok || !text) throw new Error(`Token request failed (${r.status}): ${text || "empty response"}`);
-  return JSON.parse(text).access_token;
+  const d = JSON.parse(text);
+  cached = { token: d.access_token, exp: Date.now() + 50 * 60 * 1000 };
+  return d.access_token;
 }
 
 export function getPassword() {
