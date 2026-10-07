@@ -1,5 +1,4 @@
-export const BASE = "https://sandbox.safaricom.co.ke";
-
+export const BASE = "https://api.safaricom.co.ke";
 export async function getToken() {
   const key = process.env.MPESA_CONSUMER_KEY;
   const secret = process.env.MPESA_CONSUMER_SECRET;
