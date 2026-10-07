@@ -21,7 +21,7 @@ export default async function handler(req, res) {
         TransactionType: "CustomerBuyGoodsOnline",
         Amount: Math.round(Number(amount)),
         PartyA: phone,
-        PartyB: process.env.MPESA_SHORTCODE,
+        PartyB: process.env.MPESA_TILL,
         PhoneNumber: phone,
         CallBackURL: process.env.MPESA_CALLBACK_URL,
         AccountReference: "Gift",
