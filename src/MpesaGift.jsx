@@ -36,13 +36,13 @@ export default function MpesaGift() {
     }
   }
 
-  async function poll(id, tries) {
-    if (tries > 12) {
-      setMsg("We couldn't confirm the payment. If money was deducted, thank you!");
+    async function poll(id, tries) {
+    if (tries > 20) {
+      setMsg("We couldn't confirm it on this page. If you got an M-Pesa SMS, your gift went through. Thank you! 💛");
       setBusy(false);
       return;
     }
-    await new Promise((r) => setTimeout(r, 5000));
+    await new Promise((r) => setTimeout(r, 4000));
     try {
       const r = await fetch("/api/mpesa/status", {
         method: "POST",
@@ -50,10 +50,11 @@ export default function MpesaGift() {
         body: JSON.stringify({ checkoutRequestId: id }),
       });
       const d = await r.json();
-      if (d.ResultCode === "0") {
+      const code = d.ResultCode !== undefined ? String(d.ResultCode) : null;
+      if (code === "0") {
         setMsg("Thank you for your gift! 💛");
         setBusy(false);
-      } else if (d.ResultCode !== undefined) {
+      } else if (code !== null) {
         setMsg(d.ResultDesc || "Payment was not completed.");
         setBusy(false);
       } else {
