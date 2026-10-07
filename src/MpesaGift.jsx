@@ -54,7 +54,7 @@ export default function MpesaGift() {
       if (code === "0") {
         setMsg("Thank you for your gift! 💛");
         setBusy(false);
-      } else if (code !== null) {
+      } else if (code !== null && code !== "4999") {
         setMsg(d.ResultDesc || "Payment was not completed.");
         setBusy(false);
       } else {
