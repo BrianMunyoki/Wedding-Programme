@@ -34,7 +34,7 @@ const timeline = [
   {
     time: "12:30 – 1:00 PM",
     title: "Word of Blessing",
-    text: "Dignified words of counsel, official blessings, and prayer over Lynete & Kelvin.",
+    text: "Dignified words of counsel, official blessings, and prayer over Lynnete & Kelvin.",
   },
   {
     time: "1:00 – 2:30 PM",
@@ -148,7 +148,7 @@ function Hero({ speechesPage = false }) {
 
       {speechesPage ? (
         <>
-          <p className="event-kicker">LYNETE & KELVIN NYOMBO</p>
+          <p className="event-kicker">LYNNETE & KELVIN NYOMBO</p>
           <Flourish />
           <h1 className="speeches-title">ORDER OF SPEECHES</h1>
           <p className="hero-subtitle">CELEBRATION ADDRESSES</p>
@@ -161,7 +161,7 @@ function Hero({ speechesPage = false }) {
             <span />
           </div>
           <h1>
-            Lynete &amp; KELVIN
+            LYNNETE &amp; KELVIN
             <span>NYOMBO</span>
           </h1>
           <p className="hero-subtitle">CEREMONY PROGRAMME</p>
@@ -271,7 +271,7 @@ function GiftCard() {
 
         <div className="gift-account">
           <p className="mini-label">ACCOUNT NAME</p>
-          <strong>Lynete Akinyi Omollo</strong>
+          <strong>Lynnete Akinyi Omollo</strong>
         </div>
       </div>
       <Boundary><MpesaGift /></Boundary>
@@ -289,10 +289,10 @@ function Footer() {
       <h2>Two Hearts, One Journey</h2>
       <p>
         Thank you for joining and celebrating this beautiful milestone of love,
-        culture and union with Lynete &amp; Kelvin. Your presence and blessings
+        culture and union with Lynnete &amp; Kelvin. Your presence and blessings
         are our greatest gifts.
       </p>
-      <span>#LyneteANDKELVIN2026</span>
+      <span>#LYNNETEANDKELVIN2026</span>
     </footer>
   );
 }
